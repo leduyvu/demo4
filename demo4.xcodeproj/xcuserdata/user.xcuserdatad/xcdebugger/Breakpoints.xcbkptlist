@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392288088.430532"
+         timestampString = "392541810.989877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "HelloWorld::HelloWorld()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392290439.301299"
+         timestampString = "392548748.717742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "290"
-         endingLineNumber = "290"
+         startingLineNumber = "306"
+         endingLineNumber = "306"
          landmarkName = "HelloWorld::runLine(CCPoint location)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392290439.301299"
+         timestampString = "392548748.717742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "288"
-         endingLineNumber = "288"
+         startingLineNumber = "304"
+         endingLineNumber = "304"
          landmarkName = "HelloWorld::runLine(CCPoint location)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392290439.301299"
+         timestampString = "392548748.717742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392290439.301299"
+         timestampString = "392548748.717742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
+         startingLineNumber = "164"
+         endingLineNumber = "164"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392288088.430532"
+         timestampString = "392541810.989877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
          landmarkName = "HelloWorld::HelloWorld()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -97,11 +97,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392290439.301299"
+         timestampString = "392548748.717742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "225"
-         endingLineNumber = "225"
+         startingLineNumber = "236"
+         endingLineNumber = "236"
          landmarkName = "HelloWorld::impact(CCSprite *sp, CCSprite *ft)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -110,11 +110,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "demo4/Classes/HelloWorldScene.cpp"
-         timestampString = "392288738.082607"
+         timestampString = "392548748.717742"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "114"
+         endingLineNumber = "114"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -129,6 +129,19 @@
          startingLineNumber = "40"
          endingLineNumber = "40"
          landmarkName = "HelloWorld::HelloWorld()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "demo4/Menu.cpp"
+         timestampString = "392546522.608346"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
+         landmarkName = "Menu::~Menu()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

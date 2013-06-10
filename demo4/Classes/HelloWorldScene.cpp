@@ -1,4 +1,4 @@
-
+#include "Menu.h"
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "sstream"
@@ -26,11 +26,11 @@ HelloWorld::HelloWorld()
     m_pSpriteTexture = parent->getTexture();
     addChild(parent, 0, kTagParentNode);
     //Create CCNode :
-    CCSprite *nen = CCSprite::create("nen2.jpeg");
-    people = CCSprite::create("canh.jpeg");
-    footer = CCSprite::create("maybay.jpeg");
-    gun = CCSprite::create("sung.jpg");
-    duck = CCSprite::create("icon.jpeg");
+    CCSprite *nen = CCSprite::create("qqq.png");
+    //people = CCSprite::create("canh.jpeg");
+    footer = CCSprite::create("tructhang1.png");
+    gun = CCSprite::create("Player.png");
+    duck = CCSprite::create("Icon.png");
     ostringstream ss;
     ss << hearth;
     ostringstream ss1;
@@ -39,19 +39,22 @@ HelloWorld::HelloWorld()
     hearths= CCLabelTTF::create(ss.str().c_str(), "ico",16);
     CCLabelTTF *label = CCLabelTTF::create("Framgia Game", "Marker Felt", 30);
     CCLabelTTF *pt = CCLabelTTF::create("point", "Time New Roman",16);
+    
     CCLabelTTF *hth = CCLabelTTF::create("heart", "Time New Roman", 16);
     //set Location
-    footer->setPosition(ccp(s.width/2 + 200, s.height/2+50));
-    people->setPosition(ccp(s.width/2, s.height/2));
+    footer->setPosition(ccp(s.width/2 + 200, s.height/2+100));
+    //people->setPosition(ccp(s.width/2, s.height/2));
     gun->setPosition(ccp(s.width/2, 10));
     points->setPosition(ccp(70,s.height -50));
+    points->setColor(ccc3(255, 0,0));
     hearths->setPosition(ccp(70,s.height -30));
+    hearths->setColor(ccc3(255,0,0));
     duck->setPosition(ccp(s.width/2, s.height/2+100));
     nen->setPosition(ccp(s.width/2, s.height/2));
     pt->setPosition(ccp(30, s.height-50));
     hth->setPosition(ccp(30, s.height-30));
     // add into Scene
-    addChild(duck,4);
+    addChild(nen,1);
     addChild(footer,4);
     addChild(gun,4);
     addChild(points,5);
@@ -60,6 +63,8 @@ HelloWorld::HelloWorld()
     addChild(hth,5);
     addChild(label, 0);
     label->setColor(ccc3(0,0,255));
+    pt->setColor(ccc3(0,0,255));
+    hth->setColor(ccc3(0,0,255));
     label->setPosition(ccp( s.width/2, s.height-30));
     this->scheduleUpdate();
 }
@@ -74,6 +79,11 @@ void HelloWorld::update(float dt)
         CCLabelTTF *gameover = CCLabelTTF::create("GAME OVER", "Time New Roman", 46);
         gameover->setPosition(ccp(s.width/2,s.height/2));
         addChild(gameover,7);
+        CCDelayTime *delay= CCDelayTime::create(5);
+        CCCallFuncN * quit1 = CCCallFuncN::create(this, callfuncN_selector(HelloWorld::quit));
+        CCSequence *seq = CCSequence::createWithTwoActions(delay, quit1);
+        this->runAction(seq);
+        //exit(1);
         return ;
     }
     //check and handler impact
@@ -81,13 +91,14 @@ void HelloWorld::update(float dt)
     {
         CCSprite *sp = (CCSprite*)t;
         if(impact(sp,footer))
-        {   point = point +20;
+        {
+            point = point +20;
             setValue(points,point);
-            int x = (arc4random()%10)*100;
+            int x = (arc4random()%8)*100;
             if (x <s.width && x > 0)
-                footer->setPosition(ccp(x,200));
+                footer->setPosition(ccp(x,CCDirector::sharedDirector()->getWinSize().height/2+100));
             else
-              footer->setPosition(ccp(350,200));
+              footer->setPosition(ccp((arc4random()%5)*100,CCDirector::sharedDirector()->getWinSize().height/2+30));
             //break;
         }
         
@@ -122,8 +133,8 @@ void HelloWorld::update(float dt)
     //create boom
     if (i == 50)
     {
-        CCSprite *boom = CCSprite::create("bom.jpg");
-        boom->setPosition(footer->getPosition());
+        CCSprite *boom = CCSprite::create("bomb.png");
+        boom->setPosition(ccp(footer->getPosition().x, footer->getPosition().y - 20));
         addChild(boom,4);
         boomDown(boom);
         arrayBoom->addObject(boom);
@@ -146,7 +157,7 @@ void HelloWorld::update(float dt)
             footer->setPosition(ccp(footer->getPosition().x - 10 * dt * 5,footer->getPosition().y)) ;
         else
             footer->setPosition(ccp(footer->getPosition().x - 10 * dt * 5,footer->getPosition().y)) ;
-        duck->setPosition(ccp(duck->getPosition().x + 10 * dt * 5,duck->getPosition().y)) ;
+        //duck->setPosition(ccp(duck->getPosition().x + 10 * dt * 5,duck->getPosition().y)) ;
         //check = false;
         //break;
         i++;
@@ -235,11 +246,13 @@ bool HelloWorld::impact(CCSprite *sp, CCSprite *ft)
         //footer->setPosition(ccp((arc4random()%10)*100,200));
         CCParticleSystemQuad *emitter1 = CCParticleSystemQuad::create("SmallSun.plist");
         emitter1->setStartColor(ccc4f(0,0.3,0.5,1));
+        emitter1->setZOrder(7);
         emitter1->setBlendAdditive(false);
         emitter1->setDuration(1);
         emitter1->setPosition(pos);
         this->addChild(emitter1);
         this->removeChild(sp);
+        //emitter1->se
         this->array->removeObject(sp);
         return true;
     }
@@ -258,6 +271,7 @@ void  HelloWorld::fire(CCSprite *boom)
         this->removeChild(boom);
         CCParticleSystemQuad *emitter1 = CCParticleSystemQuad::create("SmallSun.plist");
         emitter1->setStartColor(ccc4f(0,0.3,0.5,1));
+        emitter1->setZOrder(6);
         emitter1->setBlendAdditive(false);
         emitter1->setDuration(1);
         emitter1->setPosition(boom->getPosition());
@@ -289,4 +303,15 @@ void HelloWorld::runLine(CCPoint location){
     CCSequence *sq = CCSequence::createWithTwoActions(move,remove1);
     dan1->runAction(sq);
 
+}
+void HelloWorld::quit()
+{
+    this->removeAllChildren();
+    CCScene *newScene = Menu::scene();
+    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5,newScene));
+    
+    #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    
+    #endif
+    
 }

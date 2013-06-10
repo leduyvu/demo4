@@ -25,6 +25,7 @@ public:
     void boomDown(CCSprite *boom);
     void fire(CCSprite *boom);
     void checkLocation(CCPoint location, CCPoint locationEnd);
+    void quit();
 
 private:
     b2World* world;
@@ -37,8 +38,9 @@ private:
     int i = 0;
     CCArray *array,*arrayBoom;
     bool check = false;
-    long point=0;
-    int hearth =100;
+    bool status = true;
+    long point=50;
+    int hearth =200;
     CCLabelTTF *points;
     CCLabelTTF *hearths;
 };
